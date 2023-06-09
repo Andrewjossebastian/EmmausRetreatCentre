@@ -75,6 +75,11 @@
       color: #ffffff;
     }
 
+    /* Mobile menu styles */
+    .mobile-menu {
+      display: none;
+    }
+
     /* Footer styles */
     footer {
       background-color: #512b58;
@@ -84,7 +89,7 @@
     }
 
     .footer {
-      color: #938b8b;
+        color: #938b8b;
       position: fixed;
       left: 0;
       bottom: 0;
@@ -100,21 +105,30 @@
     }
 
     #home img {
-      height: 500px;
-      width: 600px;
+      height: 600px;
+      width: 100%;
+      object-fit: cover;
     }
 
     /* Responsive styles */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       h1 {
-        font-size: 40px;
+        font-size: 36px;
       }
-      p {
-        font-size: 16px;
+
+      nav ul {
+        display: none;
       }
-      #home img {
-        height: auto;
-        width: 100%;
+
+      .mobile-menu {
+        display: block;
+        text-align: right;
+        margin: 10px;
+      }
+
+      .mobile-menu a {
+        display: block;
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -136,17 +150,26 @@
       <li><a href="monthly-schedule.html">Monthly Schedule</a></li>
       <li><a href="prayer-requests.html">Prayer Requests</a></li>
     </ul>
+    <div class="mobile-menu">
+      <a href="javascript:void(0);" onclick="toggleMenu()">Menu</a>
+    </div>
   </nav>
 
   <main>
     <section id="home">
-      <center><img src="mainimage.jpeg" alt="Photo of Mary" height="500px" width="600px"></center> 
+      <center><img src="mainimage.jpeg" alt="Photo of Mary"></center> 
     </section>
   </main>
 
   <div class="footer">
     <p>&copy; 2023 Emmaus Retreat Center. All rights reserved.</p>
   </div>
- 
+
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector('nav ul');
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    }
+  </script>
 </body>
 </html>
