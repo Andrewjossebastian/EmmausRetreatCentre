@@ -75,11 +75,6 @@
       color: #ffffff;
     }
 
-    /* Mobile menu styles */
-    .mobile-menu {
-      display: none;
-    }
-
     /* Footer styles */
     footer {
       background-color: #512b58;
@@ -89,7 +84,7 @@
     }
 
     .footer {
-        color: #938b8b;
+      color: #938b8b;
       position: fixed;
       left: 0;
       bottom: 0;
@@ -105,9 +100,8 @@
     }
 
     #home img {
-      height: 600px;
-      width: 100%;
-      object-fit: cover;
+      height: 500px;
+      width: 600px;
     }
 
     /* Responsive styles */
@@ -116,19 +110,33 @@
         font-size: 36px;
       }
 
+      #home img {
+        height: 600px;
+      }
+
       nav ul {
         display: none;
       }
 
-      .mobile-menu {
+      .menu-icon {
         display: block;
-        text-align: right;
-        margin: 10px;
+        color: #512b58;
+        font-size: 24px;
+        cursor: pointer;
       }
 
-      .mobile-menu a {
+      .menu {
+        display: none;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .menu a {
         display: block;
-        margin-bottom: 10px;
+        padding: 10px 0;
+        font-size: 18px;
+        color: #512b58;
+        text-decoration: none;
       }
     }
   </style>
@@ -150,14 +158,11 @@
       <li><a href="monthly-schedule.html">Monthly Schedule</a></li>
       <li><a href="prayer-requests.html">Prayer Requests</a></li>
     </ul>
-    <div class="mobile-menu">
-      <a href="javascript:void(0);" onclick="toggleMenu()">Menu</a>
-    </div>
   </nav>
 
   <main>
     <section id="home">
-      <center><img src="mainimage.jpeg" alt="Photo of Mary"></center> 
+      <center><img src="mainimage.jpeg" alt="Photo of Mary" height="500px" width="600px"></center> 
     </section>
   </main>
 
@@ -165,11 +170,26 @@
     <p>&copy; 2023 Emmaus Retreat Center. All rights reserved.</p>
   </div>
 
+  <div class="menu-icon">&#9776;</div>
+  <div class="menu">
+    <a href="#home">Home</a>
+    <a href="about.html">About</a>
+    <a href="history.html">History</a>
+    <a href="mcbs.html">MCBS</a>
+    <a href="ministries.html">Ministries</a>
+    <a href="residential-retreats.html">Residential Retreats</a>
+    <a href="childrens-ministry.html">Children's Ministry</a>
+    <a href="monthly-schedule.html">Monthly Schedule</a>
+    <a href="prayer-requests.html">Prayer Requests</a>
+  </div>
+
   <script>
-    function toggleMenu() {
-      var menu = document.querySelector('nav ul');
-      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
-    }
+    const menuIcon = document.querySelector('.menu-icon');
+    const menu = document.querySelector('.menu');
+
+    menuIcon.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
   </script>
 </body>
 </html>
