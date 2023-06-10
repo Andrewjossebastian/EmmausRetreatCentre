@@ -14,7 +14,7 @@
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
       color: #333;
-      overflow: hidden; /* Prevent scrolling */
+      /* overflow: hidden; Prevent scrolling */
     }
 
     /* Header styles */
@@ -44,6 +44,42 @@
       margin-bottom: 10px;
     }
 
+    /* Navigation styles */
+    nav {
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      background-color: #fafafa;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      padding: 10px 20px;
+      font-size: 22px;
+      color: #512b58;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover {
+      background-color: #512b58;
+      color: #ffffff;
+    }
+
+    /* Mobile menu styles */
+    .mobile-menu {
+      display: none;
+    }
+
     /* Footer styles */
     footer {
       background-color: #512b58;
@@ -53,8 +89,8 @@
     }
 
     .footer {
-      color: #938b8b;
-      position: fixed;
+        color: #938b8b;
+      /* position: fixed; */
       left: 0;
       bottom: 0;
       width: 100%;
@@ -65,145 +101,113 @@
 
     /* Image styles */
     #home {
-      margin-top: -35px; /* Adjust the value as per your preference */
-    }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+}
+.image-container1 {
+  align-items: flex-start;
+  flex: 0 0 50%; /* Take 50% of the width */
+  padding: 10px;
+}
 
-    #home img {
-      height: 500px;
-      width: 600px;
-    }
+.image-container1 img {
+  max-width: 600px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-    /* Mobile styles */
-    @media screen and (max-width: 768px) {
-      .menu-icon {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 9999;
-      }
+.image-container {
+  align-items: flex-start;
+  flex: 0 0 50%; /* Take 50% of the width*/
+  padding: 10px;
+} 
 
-      .menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #dfd4e0;
-        color: #fff;
-        padding: 40px 20px;
-        width: 80%;
-        max-width: 300px;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
-      }
+.image-container img {
+  align-content: first baseline;
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.column {
+  float: left;
+  width: 30%;
+  padding: 15px;
+  height: 250px;
+}
 
-      .menu.show {
-        transform: translateX(0);
-      }
+.image-container {
+  position: relative;
+}
 
-      .menu ul {
-        list-style-type: none;
-        padding: 0;
-      }
+.image-container img {
+  max-width: 100%;
+  height: 225px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-      .menu ul li {
-        margin-bottom: 20px;
-      }
+.name-box {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  bottom: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+.name-box1 {
+  position: top;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  bottom: 0;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+.row {
+  display: flex;
+}
 
-      .menu ul li a {
-        display: block;
-        padding: 10px;
-        font-size: 18px;
-        color: #ffffff;
-        text-decoration: none;
-        text-align: center;
-      }
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-      .menu ul li a:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      .side-menu {
-      width: 200px;
-      background-color: #512b58;
-      color: #fff;
-      padding: 20px;
-      display: none;
-    }
-
-    .side-menu ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .side-menu ul li {
-      margin-bottom: 10px;
-    }
-
-    .side-menu ul li a {
-      display: block;
-      padding: 10px;
-      font-size: 18px;
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    .side-menu ul li a:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    /* Content styles */
-    .content {
-      flex: 1;
-      background-color: #fff;
-      padding: 20px;
-    }
-
-    /* Toggle button styles */
-    .toggle-button {
-        background-color: transparent;
-      
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-
-    .toggle-button .bar {
-      width: 20px;
-      height: 3px;
-      background-color: #512b58;
-      margin-bottom: 4px;
-    }
 
     /* Responsive styles */
-    @media screen and (max-width: 768px) {
-      main {
-        flex-direction: column;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 36px;
       }
 
-      .side-menu {
-        width: 100%;
+      nav ul {
+        display: none;
       }
 
-      .toggle-button {
+      .mobile-menu {
         display: block;
+        text-align: right;
+        margin: 10px;
       }
-    }
+
+      .mobile-menu a {
+        display: block;
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Emmaus Retreat Center1, Mallapally</h1>
+    <h1>Emmaus Retreat Center, Mallapally</h1>
   </header>
 
   <nav>
@@ -218,21 +222,59 @@
       <li><a href="monthly-schedule.html">Monthly Schedule</a></li>
       <li><a href="prayer-requests.html">Prayer Requests</a></li>
     </ul>
+    <div class="mobile-menu">
+      <a href="javascript:void(0);" onclick="toggleMenu()">Menu</a>
+    </div>
   </nav>
 
   <main>
-    <div class="side-menu">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
     <section id="home">
-      <center><img src="mainimage.jpeg" alt="Photo of Mary" height="500px" width="600px"></center> 
+      <div class="image-container1">
+        <img src="mainimage.jpeg" alt="Photo of Mary">
+      </div>
+     
+    </section>
+    <!-- <div class="image-container">
+      <img src="FrEappachen.jpeg" alt="Photo of Fr. Eappachen">
+    </div>
+    <div class="image-container">
+      <img src="Frjude.jpeg" alt="Photo of Fr. Eappachen">
+    </div> -->
+    <section id="home">
+      <div class="row">
+        <div class="column">
+          
+          <div class="image-container">
+            <div class="name-box1">Director</div>
+            <img src="FrEappachen.jpeg" alt="Photo of Fr. Eappachen he">
+            <div class="name-box">Fr. Eappachen</div>
+        </div>
+        </div>
+        <div class="column">
+          <div class="image-container">
+            <div class="name-box1">Member</div>
+            <img src="Frjude.jpeg" alt="Photo of Fr. Jude">
+            <div class="name-box">Fr. Jude</div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="image-container">
+            <div class="name-box1">Member</div>
+            <img src="FrRoy.jpeg" alt="Photo of Fr. Roy">
+            <div class="name-box">Fr. Joseph</div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="image-container">
+            <div class="name-box1">Member</div>
+            <img src="Frjoseph.jpeg" alt="Photo of Fr.Joseph">
+            <div class="name-box">Fr. Roy</div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+  
 
   <div class="footer">
     <p>&copy; 2023 Emmaus Retreat Center. All rights reserved.</p>
@@ -240,8 +282,8 @@
 
   <script>
     function toggleMenu() {
-      var sideMenu = document.querySelector('.side-menu');
-      sideMenu.style.display = sideMenu.style.display === 'block' ? 'none' : 'block';
+      var menu = document.querySelector('nav ul');
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
     }
   </script>
 </body>
